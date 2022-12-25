@@ -14,12 +14,8 @@ public class Main {
         people.add(new Person("Вячеслав", "Глазков-Туполев", 54));
 
 
-        Comparator<Person> comparator;
-
-
-        comparator = (Person o1, Person o2) -> people.removeIf(Predicate);
-
-        Collections.sort(people, comparator);
+        Predicate<Person> min18 = person -> person.getAge() < 18;
+        people.removeIf(min18);
 
         System.out.println(people);
     }
